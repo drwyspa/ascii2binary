@@ -20,13 +20,13 @@ int main(void)
 {
     int     byte;
     int     i;
-    char    str[100];
+    char    str[1000];
 
     i = 0;
     printf("\nPlease type your phrase:\n");
     fgets(str, sizeof(str), stdin);
     printf("Your phrase in binary:\n");
-    while (str[i] != '\0')
+    while (str[i] != '\0' && str[i] != '\n')
     {
         if (str[i] != 32)
         {
