@@ -23,7 +23,7 @@ int main(void)
     char    str[100];
 
     i = 0;
-    printf("Please type your phrase:\n");
+    printf("\nPlease type your phrase:\n");
     fgets(str, sizeof(str), stdin);
     printf("Your phrase in binary:\n");
     while (str[i] != '\0')
@@ -39,5 +39,6 @@ int main(void)
         }
         i++;
     }
+    write(1, "\n", 1);
     return (0);
 }
