@@ -16,17 +16,27 @@ void    print_bits(unsigned char    octet)
     }
 }
 
-int main(int argc, char **argv)
+int main(void)
 {
-    int byte;
-    int i;
+    int     byte;
+    int     i;
+    char    str[100];
 
     i = 0;
+    printf("Please type your phrase:\n");
+    fgets(str, sizeof(str), stdin);
     printf("Your phrase in binary:\n");
-    while (argv[1][i])
+    while (str[i] != '\0')
     {
-        byte = argv[1][i];
-        print_bits(byte);
+        if (str[i] != 32)
+        {
+            byte = str[i];
+            print_bits(byte);
+        }
+        else
+        {
+            write(1, " ", 1);
+        }
         i++;
     }
     return (0);
