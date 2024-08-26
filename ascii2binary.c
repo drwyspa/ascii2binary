@@ -12,7 +12,7 @@ void    print_bits(unsigned char    octet)
     {
         bit = (octet >> i & 1) + 48;
         write(1, &bit, 1);
-        usleep(50000);
+        usleep(10000);
     }
 }
 
@@ -23,7 +23,7 @@ int main(void)
     char    str[1000];
 
     i = 0;
-    printf("\nPlease type your phrase:\n");
+    printf("\nPlease type your phrase (max 1000 ASCII signs):\n");
     fgets(str, sizeof(str), stdin);
     printf("Your phrase in binary:\n");
     while (str[i] != '\0' && str[i] != '\n')
